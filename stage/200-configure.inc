@@ -1,0 +1,3 @@
+echo Symblink to dl and configuration ...
+	ln -sf $P/dl $DL/dl;
+	cp -r $P/conf/files-$step/* $DL/

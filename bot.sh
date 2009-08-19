@@ -35,7 +35,7 @@ for step in $TARGET; do
 	for stage in ./stage/*.inc; do
 		echo "`basename $stage` \n`date`\n" > log/STATUS
 		echo Including $stage
-		. $stage > log/$step-`basename $stage`-`date +%F` 2>&1
+		. $stage > log/$step-`date +%F`-`basename $stage` 2>&1
 		cd $P
 	done
 	echo "OFFLINE \n`date`\n" > log/STATUS

@@ -2,6 +2,9 @@
 
 function loader(){
 
+$r = "Explore the <a href=\"?page=explor\">build_dir</a> <br>";
+$r .= "Here follow the log files: <br>";
+
 $dir = "../log";
 $dh  = opendir($dir);
 while (false !== ($filename = readdir($dh))) {

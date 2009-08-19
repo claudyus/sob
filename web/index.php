@@ -1,5 +1,7 @@
 <?
 
+session_start();
+
 $page = $_GET['page'];
 
 if (! isset($page)) {

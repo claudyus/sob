@@ -34,11 +34,10 @@ for step in `ls conf/*.conf | cut -f 2 -d / | cut -f 1 -d .`; do
 		echo Skip $step!
 		continue;
 	fi
-
 	for stage in ./stage/*.inc; do
 		echo "`basename $stage` <br>`date`<br>" > log/STATUS
 		echo Including $stage
-		. $stage > log/$step-`date +%F`-`basename $stage` 2>&1
+		. $stage `tty -s && echo '| tee ' || echo '>'` log/$step-`date +%F`-`basename $stage` 2>&1
 		cd $P
 	done
 	echo "OFFLINE <br>`date`<br>" > log/STATUS

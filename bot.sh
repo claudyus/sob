@@ -18,8 +18,16 @@ cd `dirname $_`
 P=`pwd`
 
 mkdir -p dl log
-#for each file inside conf/; use its name as step name!
-for step in `ls conf/*.conf | cut -f 2 -d / | cut -f 1 -d .`; do
+
+if [ -z $1 ]; then
+	#for each .conf file inside conf/; use its name as step name!
+	TARGET=`ls conf/*.conf | cut -f 2 -d / | cut -f 1 -d .`
+else
+	#test a specific target
+	TARGET=$1
+fi
+
+for step in $TARGET; do
 
 	echo "************************"
 	echo "* " $step 

@@ -2,8 +2,9 @@
 
 function loader(){
 
-$r = "Explore the <a href=\"?page=explor\">build_dir</a> <br>";
-$r .= "Here follow the log files: <br>";
+//FIXME$r = "Explore the <a href=\"?page=explor\">build_dir</a> <br>";
+$r = "Check compile errors <a href=\"?page=errors\">here</a> <br>";
+$r .= "Here follow the complete log files: <br>";
 
 $dir = "../log";
 $dh  = opendir($dir);

@@ -9,7 +9,6 @@ if (! isset($_GET["path"])) {
 }
 $dir = $_SESSION["path"];
 
-//echo $dir;
 
 $dh  = opendir($dir);
 while (false !== ($filename = readdir($dh))) {
@@ -18,6 +17,7 @@ while (false !== ($filename = readdir($dh))) {
 
 sort($files);
 
+// "chroot" web users
 $skip =array(".", "..", ".git", ".svn");
 
 foreach ($files as $f) {

@@ -1,6 +1,6 @@
 <?
 
-function loader(){
+function errors(){
 
 $r = "";
 

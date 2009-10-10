@@ -1,5 +1,0 @@
-config 'httpd'
-	option 'port' '10000'
-	option 'home' '/www/'
-
-

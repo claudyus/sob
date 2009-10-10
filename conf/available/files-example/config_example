@@ -1,0 +1,5 @@
+#BEWARE: remenber to add a symblink
+#See ls -la ;)
+
+CONFIG_TARGET_etrax=y
+CONFIG_ALL=y

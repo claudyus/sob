@@ -8,3 +8,5 @@
 echo Symblink to dl and configuration ...
 	ln -sfv $P/dl $DL/dl;
 	cp -rv $P/conf/files-$step/* $DL/
+        cp -rv $P/conf/files-$step/.config $DL/
+

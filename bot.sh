@@ -5,10 +5,7 @@
 # Copyright 2009 - Claudio Mignanti <c.mignanti@gmail.com>
 #
 
-#Define targets here...
-TARGET=""
-
-#For any target you should use define a configuration file
+#For any target you should define a configuration file
 # in conf/$(target_name).conf
 
 ####### Don't edit below this line'#######
@@ -17,7 +14,9 @@ cd `dirname $_`
 P=`pwd`
 
 mkdir -p dl log
-for step in $TARGET; do
+#for each file inside conf/; use its name as step name!
+for step in `ls conf/*.conf | cut -f 2 -d / | cut -f 1 -d .`; do
+
 	echo "************************"
 	echo "* " $step 
 	echo "************************"

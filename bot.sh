@@ -6,7 +6,7 @@
 #
 
 #Define targets here...
-TARGET="crux crisos"
+TARGET=""
 
 #For any target you should use define a configuration file
 # in conf/$(target_name).conf
@@ -16,7 +16,7 @@ TARGET="crux crisos"
 cd `dirname $_`
 P=`pwd`
 
-mkdir -p dl
+mkdir -p dl log
 for step in $TARGET; do
 	echo "************************"
 	echo "* " $step 
@@ -33,11 +33,11 @@ for step in $TARGET; do
 	fi
 
 	for stage in ./stage/*.inc; do
-		echo "`basename $stage` \n`date`\n" > log/STATUS
+		echo "`basename $stage` <br>`date`<br>" > log/STATUS
 		echo Including $stage
 		. $stage > log/$step-`date +%F`-`basename $stage` 2>&1
 		cd $P
 	done
-	echo "OFFLINE \n`date`\n" > log/STATUS
+	echo "OFFLINE <br>`date`<br>" > log/STATUS
 done
 

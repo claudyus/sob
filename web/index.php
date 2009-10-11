@@ -11,7 +11,11 @@ if (! isset($page)) {
 require ("./inc/$page.php");
 require ("./inc/status.php");
 
+#load template, if it doesn't exist load default one
 $tpl = file ('tpl.htm');
+if ($tpl === FALSE) {
+	$tpl = file ('tpl.htm.default');
+}
 
 $tpl = str_replace ( "%body" , loader(), $tpl);
 $tpl = str_replace ( "%status" , status(), $tpl);

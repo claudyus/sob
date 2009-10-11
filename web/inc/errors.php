@@ -2,7 +2,7 @@
 
 function errors(){
 
-$r = "";
+$r = "<a href='?page=default'>home</a>";
 
 $dir = "../build_dir/";
 $dh  = opendir($dir);

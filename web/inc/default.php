@@ -11,15 +11,25 @@
 function loader(){
 
 //FIXME$r = "Explore the <a href=\"?page=explor\">build_dir</a> <br>";
-$r = "Check bot stage log <a href=\"?page=bot_log\">here</a> <br>";
-$r = "Trig a bot <a href=\"?page=trigger\">here</a> <br>";
-$r .= "Here follow the specific logs: <br>";
+$r = "Check compile errors <a href=\"?page=errors\">here</a> <br>";
+$r .= "Trig a bot <a href=\"?page=trigger\">here</a> <br>";
+$r .= "Here follow the complete log files: <br>";
 
-include ("errors.php");
+$dir = "../log";
+$dh  = opendir($dir);
+while (false !== ($filename = readdir($dh))) {
+	$files[] = $filename;
+}
 
-$r .= errors();
+sort($files);
+
+$skip =array(".", "..", "STATUS");
+
+foreach ($files as $f) {
+	if (in_array($f,$skip)) continue;
+	$r .= "<a href=\"?page=detail&file=$f\">$f</a></br>";
+}
 
 return $r;
 }
-
 ?>

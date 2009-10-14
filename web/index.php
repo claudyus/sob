@@ -22,8 +22,9 @@ require ("./inc/$page.php");
 require ("./inc/status.php");
 
 #load template, if it doesn't exist load default one
-$tpl = file ('tpl.htm');
-if ($tpl === FALSE) {
+if (file_exists ('tpl.htm')) {
+	$tpl = file ('tpl.htm');
+} else {
 	$tpl = file ('tpl.htm.default');
 }
 

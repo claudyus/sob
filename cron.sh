@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# sOB - Simple Open builing Bot
+# sOB - Simple OpenWrt Bot
 #
 # Copyright 2009 - Claudio Mignanti <c.mignanti@gmail.com>
 #
@@ -17,13 +17,10 @@ if [[ ! -e /tmp/sob-planned ]]; then
 	exit 0
 fi
 
-for target in `cat /tmp/sob-planned`; do
+for target in `sort /tmp/sob-planned | uniq `; do
 	#check that $target is a valid target
 	if [[ -e ./conf/$target.conf ]]; then
-		echo ok
-		./bot.sh $target & > /dev/null
-	else
-		echo no
+		nohup ./bot.sh $target > /dev/null &
 	fi
 done
 

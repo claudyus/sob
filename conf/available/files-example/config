@@ -1,4 +1,0 @@
-# This file will be copy inside OpenWrt builroot as .config
-
-CONFIG_TARGET_etrax=y
-CONFIG_ALL=y

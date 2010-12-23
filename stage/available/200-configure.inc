@@ -8,5 +8,8 @@
 echo Symblink to dl and configuration ...
 	ln -sfv $P/dl $DL/dl;
 	cp -rv $P/conf/files-$step/* $DL/
-        cp -rv $P/conf/files-$step/config $DL/.config
 
+        echo CONFIG_TARGET_"$ARCH"=y > $DL/.config
+	for PK in $PKG; do
+        	echo CONFIG_"$PK"=y >> $DL/.config
+	done

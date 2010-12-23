@@ -34,9 +34,9 @@ for step in $TARGET; do
 	echo "************************"
 
 	#define target variable
-	# define DL= REPO= BRANCH=
 	DISABLE=
 	. ./conf/$step.conf
+	DL=build/"$ARCH"_dir"$NAME"
 
 	if [ $DISABLE ]; then
 		echo Skip $step!

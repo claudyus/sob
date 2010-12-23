@@ -1,22 +1,21 @@
-SoB - Simple open Bot
+SoB - Simple OpenWrt Bot
 ----------------------------------
 
-
 SoB is a free software release under GPL v2 realize to automate task.
-SoB can help in a system to automate the compile/test cycle required by most software projects to validate code changes or release snapshots.
+SoB can help in a system to automate the compile/test cycle required by most 
+software projects to validate code changes or release snapshots.
 
-Inside SoB each task is define as a "step" each step is defined by a stage file avaiable under stage/ dir.
+Inside SoB each task is define as a "step" each step is defined by a stage file
+avaiable under stage/ dir.
 
-The bot cycle over a lists of project defined inside config/*.conf files.Each config file MUST define follow variable:
-
-REPO a valid software repository (only git at the moment)
-BRANCH a valid git branch
-DL a directory were compilation taking places
+The bot cycle over a lists of project defined inside config/*.conf files. 
+Each config file defines a series of variable defined with the stages, inside
+config/ is provided an example to recompile ar71xx target of OpenWrt.
 
 DEVELOP
 ----------
-SoB is very simple but any improvement is welcome. Feel free to drop me a
- mail for bugs, suggestion, patch and general improvement
+SoB is very simple but any improvement is welcome. Feel free to drop me a mail
+for bugs, suggestion, patch and general improvement
 <c.mignanti@gmail.com>
 
 Thank you for using SoB

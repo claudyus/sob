@@ -6,4 +6,4 @@
 # the License, or (at your option) any later version.
 
 echo Synch with server
-#	rsync -avz -e ssh /home/claudyus/web/repo/* www.acmesystems.it:/home/claudyus/rep
+#	rsync -avz -e ssh $REPO_DIR/ remote.net:/remote/dir

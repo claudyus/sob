@@ -6,6 +6,6 @@
 # the License, or (at your option) any later version.
 
 echo Remake pkg index...
-	cd $REPO_DIR/packages/target-arm_uClibc-0.9.30.1
+	cd $REPO_DIR/packages/
 	$P/extra/ipkg-make-index.sh . > Packages
 

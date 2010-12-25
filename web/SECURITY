@@ -1,0 +1,7 @@
+Security consideration
+----------------------
+
+This web interface is not design to be robust to a clever attacker, probabily
+it is vulnerable to injection and other attacks.
+If you use it please consider an appropriate security polity at least with a
+http auth.

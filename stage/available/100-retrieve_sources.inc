@@ -7,12 +7,25 @@
 
 # At the moment this support only git repositories
 
-echo Retrieve sources ...
-	if [ -d $DL ]; then
-		cd $DL;
-		git pull origin $BRANCH;
-	else
-		git clone $REPO $DL;
-		cd $DL;
-		git checkout $BRANCH;
-	fi;
+case `echo $REPO | cut -b-3` in 
+svn) echo "Retrieve sources via svn..."
+     if [ -d $DL ]; then
+	cd $DL;
+	svn up
+     else
+	svn co $REPO $DL
+     fi
+     ;;
+git) echo "Retrieve sources via git..."
+     if [ -d $DL ]; then
+	cd $DL;
+	git pull origin $BRANCH;
+     else
+	git clone $REPO $DL;
+	cd $DL;
+	git checkout $BRANCH;
+     fi
+     ;;
+*) echo "bad protocol"; exit 0;
+     ;;
+esac

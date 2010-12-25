@@ -26,6 +26,6 @@ git) echo "Retrieve sources via git..."
 	git checkout $BRANCH;
      fi
      ;;
-*) echo "bad protcol"; exit 0;
+*) echo "bad protocol"; exit 0;
      ;;
 esac

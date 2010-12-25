@@ -12,6 +12,8 @@ The bot cycle over a lists of project defined inside config/*.conf files.
 Each config file defines a series of variable defined with the stages, inside
 config/ is provided an example to recompile ar71xx target of OpenWrt.
 
+If you use the web interface read also web/SECURITY
+
 DEVELOP
 ----------
 SoB is very simple but any improvement is welcome. Feel free to drop me a mail

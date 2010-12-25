@@ -1,4 +1,4 @@
-<?
+<?php
 
 /* sOB - Simple Open builing Bot
  *

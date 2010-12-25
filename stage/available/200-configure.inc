@@ -9,7 +9,16 @@ echo Symblink to dl and configuration ...
 	ln -sfv $P/dl $DL/dl;
 	cp -rv $P/conf/files-$step/* $DL/
 
+	#arch and paks
         echo CONFIG_TARGET_"$ARCH"=y > $DL/.config
 	for PK in $PKG; do
         	echo CONFIG_"$PK"=y >> $DL/.config
 	done
+
+	#external tree support
+	if [ $KERNEL_GIT_CLONE_URI ]; then
+		echo CONFIG_DEVEL=y >>  $DL/.config
+		echo CONFIG_EXTERNAL_KERNEL_TREE=y >>  $DL/.config
+		echo CONFIG_KERNEL_GIT_CLONE_URI=$KERNEL_GIT_CLONE_URI >>  $DL/.config
+		echo CONFIG_KERNEL_GIT_BRANCH=$KERNEL_GIT_BRANCH >>  $DL/.config
+	fi

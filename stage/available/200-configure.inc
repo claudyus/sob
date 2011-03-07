@@ -11,9 +11,13 @@ echo Symblink to dl and configuration ...
 
 	#arch and paks
         echo CONFIG_TARGET_"$ARCH"=y > $DL/.config
-	for PK in $PKG; do
-        	echo CONFIG_"$PK"=y >> $DL/.config
-	done
+	if [ $PKG == "ALL" ]; then
+		echo CONFIG_ALL=y >> $DL/.config;
+	else
+		for PK in $PKG; do
+        		echo CONFIG_PACKAGE_"$PK"=y >> $DL/.config;
+		done
+	fi
 
 	#external tree support
 	if [ $KERNEL_GIT_CLONE_URI ]; then

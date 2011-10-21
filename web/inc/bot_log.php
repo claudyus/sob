@@ -1,4 +1,4 @@
-<? 
+<?
 /* sOB - Simple Open builing Bot
  *
  * Copyright 2009 - Claudio Mignanti <c.mignanti@gmail.com>

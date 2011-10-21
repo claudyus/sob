@@ -30,7 +30,7 @@ fi
 for step in $TARGET; do
 
 	echo "************************"
-	echo "* " $step 
+	echo "* " $step
 	echo "************************"
 
 	#define target variable

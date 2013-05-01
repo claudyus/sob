@@ -6,16 +6,17 @@
 # the License, or (at your option) any later version.
 
 echo Symblink to dl and configuration ...
+	#use common dl directory for all bots
 	ln -sfv $P/dl $DL/dl;
-	cp -rv $P/conf/files-$step/* $DL/
+	#cp -rv $P/conf/files-$step/* $DL/
 
 	#arch and paks
-        echo CONFIG_TARGET_"$ARCH"=y > $DL/.config
+	echo CONFIG_TARGET_"$ARCH"=y > $DL/.config
 	if [ $PKG == "ALL" ]; then
 		echo CONFIG_ALL=y >> $DL/.config;
 	else
 		for PK in $PKG; do
-        		echo CONFIG_PACKAGE_"$PK"=y >> $DL/.config;
+				echo CONFIG_PACKAGE_"$PK"=y >> $DL/.config;
 		done
 	fi
 

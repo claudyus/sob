@@ -9,5 +9,5 @@ echo Run make ...
 	cd $DL
 	rm -fr staging_dir/ build_dir/ tmp/
 	make defconfig
-	make -j 8 V=99 IGNORE_ERRORS=m BUILD_LOG=1
+	$MAKE_COMMAND
 
